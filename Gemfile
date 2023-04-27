@@ -47,6 +47,9 @@ gem 'jquery-rails'
 #html
 gem 'bootstrap', '~> 5.3.0.alpha3'
 
+#auth
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
