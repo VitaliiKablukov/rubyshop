@@ -6,8 +6,10 @@
         <% end %>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <%= link_to "Overview", overview_path, class: current_page_class(overview_path)%>
+          <%- if user_signed_in? %>
           <%= link_to "Orders", orders_path, class: current_page_class(orders_path)%>
           <%= link_to "Orders_description", orders_description_path, class: current_page_class(orders_description_path)%>
+          <%end%>
 
 
         </ul>
@@ -20,10 +22,10 @@
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item" href="#">New project...</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
-            <%= button_to "Logout", destroy_user_session_path, class:"btn btn-outline-primary me-2", method: :delete, form: {turbolink: false} %>
-
+            <li><%= button_to "Logout", destroy_user_session_path, class:"btn btn-outline-primary me-2 dropdown-item", method: :delete, form: {turbolink: false} %>
+</li>
           </ul>
         </div>
 
