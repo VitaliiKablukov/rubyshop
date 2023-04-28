@@ -1,0 +1,30 @@
+
+<div class="col" id="<%= dom_id item %>">
+          <div class="card shadow-sm">
+
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Name:</strong>
+              <%= item.Name %>
+            </p>
+            <p class="card-text">
+              <strong>Description:</strong>
+              <%= item.Description %>
+            </p>
+            <p class="card-text">
+              <strong>Price:</strong>
+              <%= item.price %>
+            </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to  item do%>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <%end%>
+                </div>
+                <small class="text-body-secondary">9 mins</small>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
