@@ -1,0 +1,32 @@
+<%= form_with(model: userorderdescription) do |form| %>
+  <% if userorderdescription.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(userorderdescription.errors.count, "error") %> prohibited this userorderdescription from being saved:</h2>
+
+      <ul>
+        <% userorderdescription.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :userorder_id, style: "display: block" %>
+    <%= form.text_field :userorder_id %>
+  </div>
+
+  <div>
+    <%= form.label :item_id, style: "display: block" %>
+    <%= form.text_field :item_id %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_28_195130) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_29_015419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,13 +49,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_195130) do
   end
 
   create_table "order_descriptions", force: :cascade do |t|
-    t.bigint "order_id", null: false
+    t.bigint "userorder_id", null: false
     t.bigint "item_id", null: false
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_order_descriptions_on_item_id"
-    t.index ["order_id"], name: "index_order_descriptions_on_order_id"
+    t.index ["userorder_id"], name: "index_order_descriptions_on_userorder_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -64,6 +64,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_195130) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "orders_descriptions", force: :cascade do |t|
+    t.bigint "userorder_id", null: false
+    t.bigint "item_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orders_descriptions_on_item_id"
+    t.index ["userorder_id"], name: "index_orders_descriptions_on_userorder_id"
+  end
+
+  create_table "userorderdescriptions", force: :cascade do |t|
+    t.bigint "userorder_id", null: false
+    t.bigint "item_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_userorderdescriptions_on_item_id"
+    t.index ["userorder_id"], name: "index_userorderdescriptions_on_userorder_id"
+  end
+
+  create_table "userorders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_userorders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,4 +112,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_195130) do
   add_foreign_key "order_descriptions", "items"
   add_foreign_key "order_descriptions", "orders"
   add_foreign_key "orders", "users"
+  add_foreign_key "orders_descriptions", "items"
+  add_foreign_key "orders_descriptions", "orders"
+  add_foreign_key "userorderdescriptions", "items"
+  add_foreign_key "userorderdescriptions", "orders"
+  add_foreign_key "userorders", "users"
 end
