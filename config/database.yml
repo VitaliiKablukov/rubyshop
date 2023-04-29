@@ -14,4 +14,4 @@ test:
 
 production:
   <<: *default
-  database: rubyshop_prod
+  url: <%= ENV['DATABASE_URL'] %>
