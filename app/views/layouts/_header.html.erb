@@ -7,7 +7,7 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <%= link_to "Overview", overview_path, class: current_page_class(overview_path)%>
           <%- if user_signed_in? %>
-          <%= link_to "Orders", orders_path, class: current_page_class(orders_path)%>
+          <%= link_to "add_to_cart", add_to_cart_path, class: current_page_class(add_to_cart_path)%>
           <%= link_to "Orders_description", orders_description_path, class: current_page_class(orders_description_path)%>
           <%end%>
 

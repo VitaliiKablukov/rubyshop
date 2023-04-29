@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :userorderdescriptions
+  resources :userorders
+  resources :order_descriptions
+  resources :orders
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :items
@@ -10,6 +14,6 @@ Rails.application.routes.draw do
   root "items#index"
 
   get "overview", to: "items#index"
-  get "orders", to: "navs#orders"
+  post "add_to_cart", to: "cart#add_to_cart"
   get "orders_description", to: "navs#orders_description"
 end

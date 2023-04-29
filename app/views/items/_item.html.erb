@@ -1,6 +1,8 @@
 
 <div class="col" id="<%= dom_id item %>">
+
           <div class="card shadow-sm">
+
 
           <div class="card-body">
             <p class="card-text">
@@ -18,13 +20,26 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <%= link_to  item do%>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary mr-5">View</button>
                   <%end%>
+                  </div  >
+<%= form_tag(add_to_cart_path, method: :post ) do %>
+                  <%= label_tag(:quantity, "quantity:") %>
+                  <%= number_field_tag(:quantity, 1, min: 1) %>
+                  <%= submit_tag("Add to basket") %>
+<% end %>
+
+                  </div>
                 </div>
                 <small class="text-body-secondary">9 mins</small>
+
               </div>
+
             </div>
-          </div>
-          </div>
+
+
+
+
+
 
 
