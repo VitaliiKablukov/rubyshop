@@ -1,4 +1,8 @@
 <div id="<%= dom_id userorderdescription %>">
+     <div class="card shadow-sm">
+
+
+          <div class="card-body">
   <p>
     <strong>UserOrder:</strong>
     <%= userorderdescription.userorder_id %>
@@ -13,5 +17,10 @@
     <strong>Quantity:</strong>
     <%= userorderdescription.quantity %>
   </p>
+  <p>
+      <%= link_to "View", userorderdescription %>
+    </p>
 
+</div>
+</div>
 </div>

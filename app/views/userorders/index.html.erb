@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Userorders</h1>
 
 <div id="userorders">
+   <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="items">
   <% @userorders.each do |userorder| %>
     <%= render userorder %>
-    <p>
-      <%= link_to "Show this userorder", userorder %>
-    </p>
+
   <% end %>
 </div>
+</div>
+</div>
+</div>
 
-<%= link_to "New userorder", new_userorder_path %>
+

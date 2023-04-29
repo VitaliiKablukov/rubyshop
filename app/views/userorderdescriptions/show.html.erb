@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
-
+ <div class="col-4 offset-4">
 <%= render @userorderdescription %>
 
 <div>
-  <%= link_to "Edit this userorderdescription", edit_userorderdescription_path(@userorderdescription) %> |
+
   <%= link_to "Back to userorderdescriptions", userorderdescriptions_path %>
 
   <%= button_to "Destroy this userorderdescription", @userorderdescription, method: :delete %>
+</div>
 </div>

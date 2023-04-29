@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Userorderdescriptions</h1>
 
 <div id="userorderdescriptions">
-  <% @userorderdescriptions.each do |userorderdescription| %>
-    <%= render userorderdescription %>
-    <p>
-      <%= link_to "Show this userorderdescription", userorderdescription %>
-    </p>
-  <% end %>
-</div>
+ <div class="album py-5 bg-body-tertiary">
+    <div class="container">
 
-<%= link_to "New userorderdescription", new_userorderdescription_path %>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="items">
+  <% @userorderdescriptions.each do |userorderdescription| %>
+
+    <%= render userorderdescription %>
+
+
+  <% end %>
+   </div>
+    </div>
+     </div>
+     </div>
+
+
+
+
+
+

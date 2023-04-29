@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root "items#index"
 
   get "overview", to: "items#index"
+  get "add_to_cart", to: "userorder#show"
   post "add_to_cart", to: "cart#add_to_cart"
-  get "orders_description", to: "navs#orders_description"
+  get "userorderdescriptions", to: "userorderdescription#show"
 end

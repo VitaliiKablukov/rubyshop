@@ -23,11 +23,16 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary mr-5">View</button>
                   <%end%>
                   </div  >
-<%= form_tag(add_to_cart_path, method: :post ) do %>
+                  <%- if user_signed_in? %>
+<%= form_tag(add_to_cart_path, method: :post, ) do %>
                   <%= label_tag(:quantity, "quantity:") %>
                   <%= number_field_tag(:quantity, 1, min: 1) %>
+                  <%= hidden_field_tag(:price, item.price)%>
+                   <%= hidden_field_tag(:itemId, item.id)%>
+
                   <%= submit_tag("Add to basket") %>
 <% end %>
+<%end%>
 
                   </div>
                 </div>

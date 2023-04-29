@@ -6,7 +6,7 @@ ActiveAdmin.register Userorderdescription do
   #
   permit_params :userorder_id, :item_id, :quantity
   #
-  # o
+  # or
   #
   # permit_params do
   #   permitted = [:userorder_id, :item_id, :quantity]
