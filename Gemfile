@@ -55,6 +55,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 #features
 gem 'activeadmin'
+gem "cancan"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
